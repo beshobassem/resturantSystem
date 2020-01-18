@@ -1,0 +1,70 @@
+{%extends 'layOut.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block drink%}
+
+
+
+<div style="text-align:center; padding-top:150px;">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <img src="{%static 'register/img/15262.png'%}" width="330" height="130" style="margin:auto; text-align:center; margin-bottom:40px;">
+        </div>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <img src="{%static 'register/img/2170.png'%}" width="260" height="400" style="margin:auto; text-align:center; margin-bottom:100px;">
+    </div>
+    </div>
+
+{% if not request.user.is_authenticated %}
+<h5 style="color:red ; margin-left:100px; margin-bottom:50px;">you must login first ot order</h5>
+            {%endif%}
+<div class="container" style="padding-top:0px;">
+    <div class="row" style="border-left:2px solid #ffff66 ; border-right:2px solid #ffff66">
+
+        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:center">
+            <h1 style="color:#343a40; text-shadow:2px 2px 2px  #ffff66; font-weight:bold" >MEAL</h1>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:center">
+            <h1  style="color:#343a40; text-shadow:2px 2px 2px  #ffff66; font-weight:bold" >DESCRIPTION</h1>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:center">
+            <h1  style="color:#343a40; text-shadow:2px 2px 2px  #ffff66; font-weight:bold" >PRICE</h1>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:center">
+            {% if request.user.is_authenticated %}
+            <h1  style="color:#343a40; text-shadow:2px 2px 2px  #ffff66; font-weight:bold" >TO ORDER</h1>
+            {%endif%}
+        </div>
+        <hr>
+
+    </div>
+</div>
+<div class="container" style="padding-top:0px; margin-bottom:200px;">
+    <div class="row" style="border-left:2px solid #ffff66 ; border-right:2px solid #ffff66">
+        {% for v in d %}
+        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:center">
+            <h1 style="color:#ffff66">{{v.name}}</h1>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:center">
+            <p style="color:#ffff66; margin-top:20px;">{{v.description}}</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:center">
+            <h1 style="color:#ffff66">{{v.price}}</h1>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:center">
+            {% if request.user.is_authenticated %}
+            <button class="submit" style="border:none; border-radius:7px; font-size:16px; margin-top:20px"><a href="{% url 'order'%}" style=" text-decoration:none; color:#343a40;" >order</a></button>
+            {%endif%}
+        </div>
+        <hr style="width:80% ; font-size:25px; background: #ffff66" />
+        {%endfor%}
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

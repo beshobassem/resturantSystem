@@ -1,0 +1,50 @@
+{%extends 'layOut.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block birthday%}
+<form method="post" action="{%url 'birthdayform'%}">
+    {% csrf_token%}
+
+<div class="container" style="padding-top:150px; ">
+    <div class="row">
+
+
+            <div class="col-lg-6 col-sm-6 col-sm-6 dinIn" style="">
+                <p>date</p>
+                <input type="date" name="date" placeholder="date" required>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-sm-6 dinIn" style="">
+                <p>number</p>
+                <input name="number" type="number" placeholder="number" required>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-sm-6 dinIn">
+                <p>phone1</p>
+                <input name="phone1" type="number" placeholder="phone1" >
+            </div>
+                <div class="col-lg-6 col-sm-6 col-sm-6 dinIn" style="">
+                <p>phone2</p>
+                <input name="phone2" placeholder="phone2" style=" ">
+            </div>
+            <div class="col-lg-3 col-sm-3 col-sm-3"></div>
+            <div class="col-lg-6 col-sm-6 col-sm-6 dinIn">
+                {% if not request.user.is_authenticated %}
+                <h4>you must login first</h4>
+                {%endif%}
+                {% if request.user.is_authenticated %}
+                <input class="submit" type="submit" value="order" >
+                {%endif%}
+            </div>
+            <div class="col-lg-3 col-sm-3 col-sm-3"></div>
+
+    </div>
+</div>
+</form>
+{%endblock%}
+</body>
+</html>

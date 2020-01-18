@@ -1,0 +1,50 @@
+{%extends 'layOut.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block tableupdate%}
+<h1>update</h1>
+<form method="post" action="{% url 'update3' key%}">
+    {% csrf_token%}
+
+<div class="container" style="margin-top:50px;">
+    <div class="row">
+
+
+            <div class="row">
+
+            <div class="col-lg-6 col-sm-6 col-sm-6 dinIn"  style="">
+                <p>number</p>
+                <input type="number" name="number" value="{{data.number}}" placeholder="number" required>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-sm-6 dinIn" style="">
+                <input name="date" value="{{data.date}}" type="date" placeholder="phone" required>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-sm-6 dinIn">
+                <input name="time" value="{{data.time}}" type="time" placeholder="time" >
+            </div>
+                <div class="col-lg-6 col-sm-6 col-sm-6 dinIn">
+                <input name="phone1" value="{{data.phone1}}" type="number" placeholder="phone" >
+            </div>
+            <div class="col-lg-3 col-sm-3 col-sm-3"></div>
+            <div class="col-lg-6 col-sm-6 col-sm-6 dinIn">
+                                <input class="submit" type="submit" value="order update" >
+
+            </div>
+            <div class="col-lg-3 col-sm-3 col-sm-3"></div>
+
+
+                </div>
+
+    </div>
+</div>
+</form>
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,299 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link href="{% static 'register/style2.css'%}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Caveat Brush' rel='stylesheet'>
+    <link rel="icon" href="{%static 'register/img/1321.png'%}" type="image/png">
+
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="back">
+<nav class="navbar navbar-expand-lg fixed-top  navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="box-shadow:0px 1px 5px 3px black; width:100%">
+	    <div class="container">
+	      <a class="navbar-brand" href="{%url 'home'%}" style="font-family: 'Caveat Brush'; font-size:28px;">
+              <img src="{% static 'register/img/res.png'%}" width="40" height="40" class="d-inline-block align-top" alt="" title="resturant" style="margin-top:-3px">
+               RESTURANT</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item "><a href="{% url 'home'%}" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+	        	<li class="nav-item"><a href="{% url 'foodORdrink'%}" class="nav-link"><i class="fas fa-poll-h ii"></i> Menu</a></li>
+	         <!-- <li class="nav-item cta"><a href="{% url 'table'%}" class="nav-link">Book a table</a></li> -->
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'cart2' %}" class="nav-link"><i class="fas fa-cocktail ii"></i> cart drink</a></li>
+                {%endif%}
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'birthdaycart' %}" class="nav-link"><i class="fas fa-birthday-cake ii"></i> cart bithdat</a></li>
+                {%endif%}
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'logoutback' %}" class="nav-link"><i class="fas fa-sign-out-alt"></i> log out</a></li>
+                {%endif%}
+                {% if not request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'logoutback' %}" class="nav-link"><i class="fas fa-unlock-alt"></i> log in</a></li>
+                {%endif%}
+                {% if not request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'sign' %}" class="nav-link"><i class="fas fa-user-lock"></i> sign up</a></li>
+                {%endif%}
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+<div class="signin">
+    {%block sig%}
+    {%endblock%}
+</div>
+
+<div class="login">
+    {%block log%}
+    {%endblock%}
+</div>
+
+<div class="home">
+    {%block home%}
+    {%endblock%}
+</div>
+
+<div class="foodordrink">
+    {%block foodordrink%}
+    {%endblock%}
+</div>
+
+    {%block food%}
+    {%endblock%}
+
+<div class="drink">
+    {%block drink%}
+    {%endblock%}
+</div>
+<div class="ser">
+    {%block ser%}
+    {%endblock%}
+</div>
+<div class="order">
+    {%block order%}
+    {%endblock%}
+</div>
+<div class="cart">
+    {%block cart%}
+    {%endblock%}
+</div>
+<div class="cartupdate">
+    {%block cartupdate%}
+    {%endblock%}
+</div>
+
+<div class="order2">
+    {%block order2%}
+    {%endblock%}
+</div>
+<div class="cart2">
+    {%block cart2%}
+    {%endblock%}
+</div>
+
+<div class="cartupdate2">
+    {%block cartupdate2%}
+    {%endblock%}
+</div>
+
+<div class="table">
+    {%block table%}
+    {%endblock%}
+</div>
+
+<div class="tablecart">
+    {%block tablecart%}
+    {%endblock%}
+</div>
+
+<div class="tableupdate">
+    {%block tableupdate%}
+    {%endblock%}
+</div>
+
+<div class="birthday">
+    {%block birthday%}
+    {%endblock%}
+</div>
+
+<div class="birthdaycart">
+    {%block birthdaycart%}
+    {%endblock%}
+</div>
+
+<div class="birthdayupdate">
+    {%block birthdayupdate%}
+    {%endblock%}
+</div>
+<div class="up">up</div>
+	<!-- Footer -->
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark"  style="margin-top:150px;" >
+
+  <div style="background-color: #343a40; opacity:1">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5" style="background-color: #343a40; opacity:0.5; border-radius:20px;">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">MDBootstrap</a>
+        </p>
+        <p>
+          <a href="#!">MDWordPress</a>
+        </p>
+        <p>
+          <a href="#!">BrandFlow</a>
+        </p>
+        <p>
+          <a href="#!">Bootstrap Angular</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Your Account</a>
+        </p>
+        <p>
+          <a href="#!">Become an Affiliate</a>
+        </p>
+        <p>
+          <a href="#!">Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p>
+          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<!-- Footer -->
+</div>
+<img class="s2" src="{% static 'register/img/s2.png'%}" style="position:fixed; top:-80px; z-index:-10; left:-100px" width="500" height="600">
+<img class="s1" src="{% static 'register/img/s1.png'%}" style="position:fixed;z-index:-10; left:320px;top:-100px; " width="500" height="600">
+<img class="s4" src="{% static 'register/img/s4.png'%}" style="position:fixed; top:-150px; left:1100px; z-index:-10;" width="500" height="600">
+<img class="s5" src="{% static 'register/img/s5.png'%}" style="position:fixed; top:-180px; left:700px; z-index:-10;" width="500" height="600">
+<img class="s3" src="{% static 'register/img/s3.png'%}" style="position:fixed; top:-180px; left:460px; z-index:-10;" width="500" height="600">
+<script src="{% static 'register/javascript.js'%}"></script>
+<script src="{% static 'register/jquery-3.4.1.min.js'%}"></script>
+</body>
+</html>

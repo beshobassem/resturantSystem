@@ -1,0 +1,297 @@
+body {
+background: url('img/2663725.jpg') no-repeat fixed center;
+background-size: cover;
+color:white;
+
+}
+
+p {
+color:#ffff66;}
+.back {
+background: rgba(52, 58, 64,0.7);
+background-size: cover;
+height: 100%;
+}
+body{margin:100px auto;}
+.cen {
+margin:auto;
+margin-bottom:50px;
+}
+.sinir {
+
+margin-top: 80px;
+}
+.box {
+  width:auto;
+  height:100%;
+  background-color:#ffff66;
+  margin:0 auto;
+  float:left;
+  font-size:100px;
+  padding:20px;
+  color:#343a40;
+  margin-left:25px;
+  border-radius: 20px
+
+}
+
+/* Step 1: Build the Animation */
+@-webkit-keyframes aniload {
+  from {-webkit-transform:translate(0px, 1000px)}
+  to   {-webkit-transform:translate(0px, 0px)}
+}
+
+@-moz-keyframes aniload {
+  from {-moz-transform:translate(0px, 1000px)}
+  to   {-moz-transform:translate(0px, 0px)}
+}
+
+@-ms-keyframes aniload {
+  from {-ms-transform:translate(0px, 1000px)}
+  to   {-ms-transform:translate(0px, 0px)}
+}
+
+@-o-keyframes aniload {
+  from {-o-transform:translate(0px, 1000px)}
+  to   {-o-transform:translate(0px, 0px)}
+}
+
+@keyframes aniload {
+  from {transform:translate(0px, 1000px)}
+  to   {transform:translate(0px, 0px)}
+}
+
+/* Step 2: Call the Animation */
+#box1 {
+  -webkit-animation:aniload 4s;
+  -moz-animation:aniload 4s;
+  -ms-animation:aniload 4s;
+  -o-animation:aniload 4s;
+  animation:aniload 4s;
+}
+
+#box2 {
+  -webkit-animation:aniload 1s;
+  -moz-animation:aniload 1s;
+  -ms-animation:aniload 1s;
+  -o-animation:aniload 1s;
+  animation:aniload 1s;
+}
+
+#box3 {
+  -webkit-animation:aniload 4s;
+  -moz-animation:aniload 4s;
+  -ms-animation:aniload 4s;
+  -o-animation:aniload 4s;
+  animation:aniload 4s;
+}
+
+#box4 {
+  -webkit-animation:aniload 3s;
+  -moz-animation:aniload 3s;
+  -ms-animation:aniload 3s;
+  -o-animation:aniload 3s;
+  animation:aniload 3s;
+}
+
+#box5 {
+  -webkit-animation:aniload 2s;
+  -moz-animation:aniload 2s;
+  -ms-animation:aniload 2s;
+  -o-animation:aniload 2s;
+  animation:aniload 2s;
+}
+#box6 {
+  -webkit-animation:aniload 3.5s;
+  -moz-animation:aniload 3.5s;
+  -ms-animation:aniload 3.5s;
+  -o-animation:aniload 3.5s;
+  animation:aniload 3.5s;
+}
+.copyright{width:100%;height:auto; background-color:#171717;color:#aaa;position:fixed; bottom:0px;font:  12px Arial;padding:5px;opacity:0.4;border-top:#a00 2px solid;z-index:99999;left:0px;right:0px;}.copyright:hover{opacity:1}
+.dinIn {
+margin-top: 20px;
+    margin-bottom: 50px;
+}
+input , textarea , select {
+height: 50px;
+    font-size: 18px;
+    width: 100%;
+
+    text-align: center;
+    margin: auto;
+    background: none;
+ color: white;
+ border: none;
+ border-bottom: 2px solid #ffff66;
+ border-left: 2px solid #ffff66;
+ border-radius: 7px;
+ transition: all 0.5s ease-in-out;
+}
+input:focus {
+    box-shadow: 0px 5px 5px rgb(44, 47, 70);
+    transform: scale(1.1,1.1);
+}
+.submit {
+background: #ffff66;
+color: rgba(52, 58, 64);
+font-size: 20px;
+font-weight: bold;
+}
+textarea {
+height: 50px;
+    font-size: 18px;
+    width: 100%;
+
+    text-align: center;
+    margin: auto;
+    background: none;
+ color: white;
+ border: none;
+ border-bottom: 2px solid #ffff66;
+ border-left: 2px solid #ffff66;
+ border-radius: 7px;
+ transition: all 0.5s ease-in-out;
+}
+
+/************************/
+
+h1 {
+color: white;}
+/******************/
+.boxServices {
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-top:90px;
+
+    padding: 20px;
+    transition: all  0.5s ease-in-out;
+ }
+    .boxServices:hover {
+        box-shadow: 0px 5px 5px black;
+    }
+      .boxServices  .divIcon {
+    text-align: center;
+    margin: auto;
+    padding: 25px;
+    border: 10px solid #ffff66;
+    border-radius: 65px;
+    width: 120px;
+    height: 120px;
+    background: #343a40;
+ }
+   .boxServices .divIcon i {
+    font-size: 50px;
+    color: black;
+ }
+
+   .boxServices .divIcon .i1 {
+       font-size:30px;
+
+   }
+   .boxServices .divIcon .i2 {
+       font-size:30px;
+
+   }
+   .boxServices:hover .divIcon  {
+    background: #ffff66;
+    border: 10px solid #343a40;
+    transition: all  0.5s ease-in-out;
+ }
+
+   .boxServices:hover i{
+    color: white;
+    transition: all  0.5s ease-in-out;
+ }
+   .boxServices .web {
+       margin:30px;
+       color: #ffff66;
+   }
+   .linkIcon:hover{
+       text-decoration:none;
+   }
+
+   .boxServices .divIcon {
+
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   -o-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+}
+.boxServices .divIcon:hover i {
+
+ -webkit-transform: rotate(360deg);
+ -moz-transform: rotate(360deg);
+ -o-transform: rotate(360deg);
+ transform: rotate(360deg);
+}
+.carousel {
+    background-color: black;
+    opacity: 0.7;
+    border-radius: 10px;
+}
+
+.showmenu {
+margin-top:50px;
+}
+.circle {
+border: 10px solid #ffff66;
+border-radius:50%;
+width:150px;
+height:150px;
+margin:auto;
+padding-top:45px;
+}
+.img  {
+background: url('img/4884.jpg') no-repeat fixed center;
+background-size: cover;
+border-radius:25px;
+padding:20px;
+opacity:0.7;
+}
+.img:hover {
+        box-shadow: 0px 5px 5px black;
+    }
+.showmenu:hover .circle  {
+
+    border: 10px solid #343a40;
+    transition: all  0.5s ease-in-out;
+    background: #ffff66;
+ }
+ .showmenu:hover i{
+    color: white;
+    transition: all  0.5s ease-in-out;
+ }
+  .img:hover{
+       text-decoration:none;
+   }
+   .showmenu .img:hover i {
+
+ -webkit-transform: rotate(360deg);
+ -moz-transform: rotate(360deg);
+ -o-transform: rotate(360deg);
+ transform: rotate(360deg);
+}
+
+.up {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: #343a40;
+    color: #ffff66;
+    padding: 20px;
+    font-size: 25px;
+    border-radius: 50px;
+    display: none;
+    border:1px solid #ffff66;
+    z-index:100;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+{%extends 'layOut.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>log in</title>
+</head>
+<body>
+
+{%block log%}
+
+<div class="container"  style="padding-top:100px;">
+    <div class="row">
+        <div class="cen">
+      <div class="sinir">
+          <div class="box" id="box1">L</div>
+          <div class="box" id="box2">O</div>
+          <div class="box" id="box3">G</div>
+          <div class="box" id="box4">I</div>
+          <div class="box" id="box5">N</div>
+      </div>
+            </div>
+    </div>
+</div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
+            <form class="" method="post" action="{% url 'logback'%}">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 dinIn">
+                        <p>user name</p><input type="text" name="username" required>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 dinIn">
+                        <p>password</p><input type="password" name="password" required>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 dinIn">
+                            <input class="submit" type="submit" value="log in ">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 "></div>
+                </div>
+            </form>
+
+        </div>
+        </div>
+        </div>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 dinIn">
+                            <p style="margin-bottom: 20px; text-align: center; color:white">if you don't have account you can creat accont now</p>
+
+                            <button class="submit"  style="border:none; border-radius:7px; font-size:20px; width:100%; padding:10px;"><a href="{% url 'sign'%}" style=" text-decoration:none; color:#343a40;">create account </a></button>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 "></div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+{%endblock%}
+
+
+
+</body>
+</html>

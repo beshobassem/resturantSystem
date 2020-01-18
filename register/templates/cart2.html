@@ -1,0 +1,51 @@
+{%extends 'layOut.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block cart2%}
+
+<h1 class=".h1" style="text-align:center; color:#ffff66; padding-top:120px;
+">CART2</h1>
+<div class="container">
+    <div class="row">
+        <table class="table table-hover" style=" background: #343a40;
+    opacity: 0.5;
+    border-radius: 20px;
+    margin-top:50px;
+    margin-bottom: 150px;">
+  <thead>
+    <tr style="text-align: center; color:white; border-top:none">
+      <th scope="col"><h2 >addres</h2></th>
+      <th scope="col"><h2 >number</h2></th>
+      <th scope="col"><h2>phone1</h2></th>
+      <th scope="col"><h2>phone2</h2></th>
+      <th scope="col"><h2>update</h2></th>
+      <th scope="col"><h2>delete</h2></th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for i in d%}
+  <tr style="text-align: center; color: #ffff66;">
+      <th scope="row">{{i.address}}</th>
+      <td>{{i.number}}</td>
+      <td>{{i.phone1}}</td>
+      <th>{{i.phone2}}</th>
+      <th><button class="submit" style="border:none; border-radius:7px; font-size:16px"><a style="text-decoration:none ; color:#343a40" href="{%url 'cartupdate2' i.id %}">update</a></button></th>
+      <th><button class="submit" style="border:none; border-radius:7px; font-size:16px"><a style="text-decoration:none ; color:#343a40"  href="{%url 'delete2' i.id %}">delete</a></button></th>
+
+    </tr>
+  {%endfor%}
+
+  </tbody>
+</table>
+    </div>
+</div>
+
+{%endblock%}
+</body>
+</html>

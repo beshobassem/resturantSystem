@@ -1,0 +1,77 @@
+{%extends 'layOut.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block foodordrink%}
+<h1 style="color:#ffff66; text-align:center; margin-bottom:70px;font-weight:bold; padding-top:150px"> | CHOOSE TYPE OF TOUR ORDER </h1>
+<!--<div class="container">
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4" style="border: 1px solid white">
+            <div class="food" >
+                <h1 style="text-align:center">menu of foods</h1>
+                <div class="icon"><i class="fas fa-utensils kn"></i></div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4"  style="border: 1px solid white">
+            <div class="food" >
+                <h1 style="text-align:center">menu of foods</h1>
+                <div class="icon2"><i class="fas fa-utensils kn"></i></div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    </div>
+</div>-->
+<article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="text-center boxServices">
+                            <a href="{% url 'food'%}">
+                            <div class="divIcon">
+                                <div>
+                                    <i class="fas fa-utensils kn"></i>
+                                </div>
+                            </div>
+                                </a>
+
+                            <h5 class="web">menu of food</h5>
+                            <p class="lorem">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Magni adipisci eaque autem fugiat! Quia,
+                                provident vitae! Magni tempora perferendis eum non provident.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="text-center boxServices">
+                            <a href="{% url 'drink'%}">
+                            <div class="divIcon">
+                                <div class="linkIcon">
+                                    <i class="fas fa-cocktail"></i>
+                                    </div>
+                            </div>
+                            </a>
+                            <h5 class="web">menu of drink</h5>
+                            <p class="lorem">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Magni adipisci eaque autem fugiat! Quia,
+                                provident vitae! Magni tempora perferendis eum non provident.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+{%endblock%}
+</body>
+</html>
